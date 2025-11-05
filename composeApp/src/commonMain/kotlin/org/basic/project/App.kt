@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.safeContentPadding
+import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -33,6 +34,7 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 
 import kmpbasico.composeapp.generated.resources.Res
 import kmpbasico.composeapp.generated.resources.compose_multiplatform
+import org.basic.project.bottomBar.BottomBarScreen
 
 @Composable
 fun App() {
@@ -90,7 +92,7 @@ class Mainscreen : Screen {
 
                 )
             }
-            Spacer(modifier = Modifier.height(90.dp))
+            Spacer(modifier = Modifier.height(60.dp))
 
             Button(
                 onClick = {
@@ -103,7 +105,7 @@ class Mainscreen : Screen {
 
             }
 
-            Spacer(modifier = Modifier.height(180.dp))
+            Spacer(modifier = Modifier.height(60.dp))
 
             Button(
                 onClick = {
@@ -115,6 +117,17 @@ class Mainscreen : Screen {
                 )
 
             }
+            Spacer(modifier = Modifier.height(30.dp))
+
+            Button(
+                onClick = {navigator.push(BottomBarScreen())
+                }
+            ) {
+                Text(
+                    text = "BottomBar"
+                )
+            }
+
         }
     }
 
