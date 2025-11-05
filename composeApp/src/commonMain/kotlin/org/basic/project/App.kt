@@ -90,7 +90,7 @@ class Mainscreen : Screen {
 
                 )
             }
-            Spacer(modifier = Modifier.height(180.dp))
+            Spacer(modifier = Modifier.height(90.dp))
 
             Button(
                 onClick = {
@@ -99,6 +99,19 @@ class Mainscreen : Screen {
                 ) {
                 Text(
                     text = "Navegando"
+                )
+
+            }
+
+            Spacer(modifier = Modifier.height(180.dp))
+
+            Button(
+                onClick = {
+                    navigator.push(Thirdscreen())
+                }
+            ) {
+                Text(
+                    text = "Vamos a la tercera gato"
                 )
 
             }
@@ -138,6 +151,44 @@ class Secondscreen : Screen {
             ) {
                 Text(
                     text = "Vamos para atrás"
+                )
+            }
+        }
+
+    }
+}
+
+class Thirdscreen : Screen {
+    @Composable
+    override fun Content() {
+
+        val navigator : Navigator = LocalNavigator.currentOrThrow
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .background(Color.Yellow),
+            verticalArrangement = Arrangement.SpaceAround,
+            horizontalAlignment = Alignment.CenterHorizontally
+
+        ) {
+            Text(
+                "Tercera Pantalla",
+                fontSize = 50.sp,
+                color = Color.Blue
+            )
+
+            Spacer(
+                modifier = Modifier
+                    .height(20.dp)
+            )
+
+            Button(
+                onClick = {
+                    navigator.pop()
+                }
+            ) {
+                Text(
+                    text = "Vamos pa la primera"
                 )
             }
         }
